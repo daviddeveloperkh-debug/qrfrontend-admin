@@ -1,0 +1,61 @@
+import React, { useEffect } from 'react'
+import { AppContent, AppSidebar, AppFooter, AppHeader } from '../components/index'
+import authStore from '../store/auth'
+import { $api, getToken, removeToken } from '../helpers/api'
+import { useNavigate } from 'react-router-dom'
+import { permissionRoles } from '../_nav'
+
+const DefaultLayout = () => {
+  const navigate = useNavigate()
+  const { getMe } = authStore()
+  $api.interceptors.response.use(
+    (response) => response,
+    (error) => {
+      if (error.response && error.response.status === 401) {
+        removeToken()
+        navigate('/login')
+      }
+      return Promise.reject(error)
+    },
+  )
+
+  useEffect(() => {
+    const token = getToken()
+    if (!token) {
+      navigate('/login')
+    } else {
+      getMe()
+      .catch(() => {
+        navigate('/login')
+        removeToken()
+      })
+      // .then((res) => {
+      //   console.log('asdasdasdas', res)
+      //   if (res?.response?.status === 401 || res?.code === 'ERR_NETWORK') {
+      //     navigate('/login')
+      //     removeToken()
+      //   }
+      // })
+      // .catch((err) => {
+      //   if (err?.response?.status === 401) {
+      //     navigate('/login')
+      //     removeToken()
+      //   }
+      // })
+    }
+  }, [])
+  return (
+    <div>
+      <AppSidebar />
+      <div className="wrapper d-flex flex-column min-vh-100">
+        <AppHeader />
+        <div className="body flex-grow-1">
+          <AppContent />
+        </div>
+        <AppFooter />
+      </div>
+    </div>
+  )
+}
+
+export default DefaultLayout

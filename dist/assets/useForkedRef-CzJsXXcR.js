@@ -1,0 +1,1 @@
+import{r as o}from"./index-bjzi2NvD.js";function c(...n){return o.useMemo(()=>n.every(t=>t==null)?null:t=>{n.forEach(r=>{u(r,t)})},n)}function u(n,t){if(n!=null)if(e(n))n(t);else try{n.current=t}catch{throw new Error(`Cannot assign value "${t}" to ref "${n}"`)}}function e(n){return!!(n&&{}.toString.call(n)=="[object Function]")}export{c as u};
