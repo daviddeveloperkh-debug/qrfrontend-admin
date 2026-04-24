@@ -21,7 +21,7 @@ const _nav = [
   },
   {
     component: CNavItem,
-    name: 'Foydalanuvchilar',
+    name: 'Studentlar',
     to: `/user${helperQuery}`,
     icon: <CIcon icon={cilGroup} customClassName="nav-icon" />,
   },

@@ -18,7 +18,7 @@ const User = () => {
         <CCardHeader>
           <CRow>
             <CCol className="d-flex align-items-center">
-              <CCardTitle className="mb-0">Foydalanuvchilar</CCardTitle>
+              <CCardTitle className="mb-0">Studentlar</CCardTitle>
             </CCol>
             <CCol className="d-flex justify-content-end gap-2">
               <Link to="/user/create">

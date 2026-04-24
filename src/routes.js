@@ -26,16 +26,16 @@ const WelderCertificatesEdit = React.lazy(() => import('./views/pages/welderCert
 
 const routes = [
   { path: '/', exact: true, name: '', element: Dashboard },
-  { path: '/user', name: 'Foydalanuvchilar', element: User },
-  { path: '/user/:id', name: 'Foydalanuvchi', element: UserShow },
+  { path: '/user', name: 'Studentlar', element: User },
+  { path: '/user/:id', name: 'Student', element: UserShow },
   {
     path: '/user/create',
-    name: 'Foydalanuvchi yaratish',
+    name: 'Student yaratish',
     element: UserCreate,
   },
   {
     path: '/user/edit/:id',
-    name: 'Foydalanuvchi tahrirlash',
+    name: 'Student tahrirlash',
     element: UserEdit,
   },
   { path: '/admins', name: 'Adminlar', element: Admins },
