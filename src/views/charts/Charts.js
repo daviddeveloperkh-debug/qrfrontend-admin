@@ -108,7 +108,7 @@ const Charts = () => {
       </CCol>
 
       {/* DOUGHNUT */}
-      <CCol xs={6}>
+      {/* <CCol xs={6}>
         <CCard className="mb-4">
           <CCardHeader>Doughnut Chart</CCardHeader>
           <CCardBody>
@@ -125,10 +125,10 @@ const Charts = () => {
             />
           </CCardBody>
         </CCard>
-      </CCol>
+      </CCol> */}
 
       {/* PIE */}
-      <CCol xs={6}>
+      {/* <CCol xs={6}>
         <CCard className="mb-4">
           <CCardHeader>Pie Chart</CCardHeader>
           <CCardBody>
@@ -145,10 +145,10 @@ const Charts = () => {
             />
           </CCardBody>
         </CCard>
-      </CCol>
+      </CCol> */}
 
       {/* POLAR */}
-      <CCol xs={6}>
+      {/* <CCol xs={6}>
         <CCard className="mb-4">
           <CCardHeader>Polar Area</CCardHeader>
           <CCardBody>
@@ -165,10 +165,10 @@ const Charts = () => {
             />
           </CCardBody>
         </CCard>
-      </CCol>
+      </CCol> */}
 
       {/* RADAR */}
-      <CCol xs={6}>
+      {/* <CCol xs={6}>
         <CCard className="mb-4">
           <CCardHeader>Radar Chart</CCardHeader>
           <CCardBody>
@@ -193,7 +193,7 @@ const Charts = () => {
             />
           </CCardBody>
         </CCard>
-      </CCol>
+      </CCol> */}
     </CRow>
   )
 }
