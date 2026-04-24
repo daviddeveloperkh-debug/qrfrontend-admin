@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useEffect } from 'react'
 import { CCard, CCardBody, CCol, CCardHeader, CRow } from '@coreui/react'
 import {
@@ -8,67 +10,95 @@ import {
   CChartPolarArea,
   CChartRadar,
 } from '@coreui/react-chartjs'
-import { DocsCallout } from 'src/components'
 import { statsStore } from '../../store/index'
 
 const Charts = () => {
-  const { getList, list, listLoading } = statsStore()
-  const random = () => Math.round(Math.random() * 100)
+  const { getList } = statsStore()
+  const list = [
+    {
+      month: '2026-04',
+      total: 142,
+    },
+    {
+      month: '2026-05',
+      total: 143,
+    },
+    {
+      month: '2026-06',
+      total: 324,
+    },
+    {
+      month: '2026-07',
+      total: 12,
+    },
+    {
+      month: '2026-08',
+      total: 53,
+    },
+    {
+      month: '2026-09',
+      total: 23,
+    },
+  ]
 
   useEffect(() => {
     getList()
   }, [])
+
+  // 📅 Month formatter
   const formatMonth = (month) => {
-  const [year, m] = month.split('-');
-  const date = new Date(Number(year), Number(m) - 1);
-  return date.toLocaleString('en-US', { month: 'long', year: 'numeric' });
-};
+    const [year, m] = month.split('-')
+    const date = new Date(Number(year), Number(m) - 1)
+    return date.toLocaleString('en-US', {
+      month: 'short',
+      year: 'numeric',
+    })
+  }
+
+  // 🔥 Normalized data
+  const labels = list?.map((item) => formatMonth(item.month)) || []
+  const values = list?.map((item) => item.total) || []
+
+  // 🎨 Colors (reuse everywhere)
+  const colors = ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40']
 
   return (
     <CRow>
-      <CCol xs={12}>
+      {/* BAR */}
+      <CCol xs={6}>
         <CCard className="mb-4">
-          <CCardHeader>Statistika</CCardHeader>
+          <CCardHeader>Bar Chart</CCardHeader>
           <CCardBody>
             <CChartBar
               data={{
-                labels: list?.map((item) => formatMonth(item.month)),
+                labels,
                 datasets: [
                   {
                     label: 'Foydalanuvchilar',
-                    backgroundColor: '#f87979',
-                    data: list?.map((item) => item.total),
+                    backgroundColor: '#36A2EB',
+                    data: values,
                   },
                 ],
               }}
-              labels="months"
             />
           </CCardBody>
         </CCard>
       </CCol>
-      {/* <CCol xs={6}>
+
+      {/* LINE */}
+      <CCol xs={6}>
         <CCard className="mb-4">
           <CCardHeader>Line Chart</CCardHeader>
           <CCardBody>
             <CChartLine
               data={{
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                labels,
                 datasets: [
                   {
-                    label: 'My First dataset',
-                    backgroundColor: 'rgba(220, 220, 220, 0.2)',
-                    borderColor: 'rgba(220, 220, 220, 1)',
-                    pointBackgroundColor: 'rgba(220, 220, 220, 1)',
-                    pointBorderColor: '#fff',
-                    data: [random(), random(), random(), random(), random(), random(), random()],
-                  },
-                  {
-                    label: 'My Second dataset',
-                    backgroundColor: 'rgba(151, 187, 205, 0.2)',
-                    borderColor: 'rgba(151, 187, 205, 1)',
-                    pointBackgroundColor: 'rgba(151, 187, 205, 1)',
-                    pointBorderColor: '#fff',
-                    data: [random(), random(), random(), random(), random(), random(), random()],
+                    label: 'Foydalanuvchilar',
+                    borderColor: '#4BC0C0',
+                    backgroundColor: 'rgba(75,192,192,0.2)',
+                    data: values,
                   },
                 ],
               }}
@@ -76,17 +106,19 @@ const Charts = () => {
           </CCardBody>
         </CCard>
       </CCol>
+
+      {/* DOUGHNUT */}
       <CCol xs={6}>
         <CCard className="mb-4">
           <CCardHeader>Doughnut Chart</CCardHeader>
           <CCardBody>
             <CChartDoughnut
               data={{
-                labels: ['VueJs', 'EmberJs', 'ReactJs', 'AngularJs'],
+                labels,
                 datasets: [
                   {
-                    backgroundColor: ['#41B883', '#E46651', '#00D8FF', '#DD1B16'],
-                    data: [40, 20, 80, 10],
+                    backgroundColor: colors,
+                    data: values,
                   },
                 ],
               }}
@@ -94,18 +126,19 @@ const Charts = () => {
           </CCardBody>
         </CCard>
       </CCol>
+
+      {/* PIE */}
       <CCol xs={6}>
         <CCard className="mb-4">
           <CCardHeader>Pie Chart</CCardHeader>
           <CCardBody>
             <CChartPie
               data={{
-                labels: ['Red', 'Green', 'Yellow'],
+                labels,
                 datasets: [
                   {
-                    data: [300, 50, 100],
-                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-                    hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                    data: values,
+                    backgroundColor: colors,
                   },
                 ],
               }}
@@ -113,17 +146,19 @@ const Charts = () => {
           </CCardBody>
         </CCard>
       </CCol>
+
+      {/* POLAR */}
       <CCol xs={6}>
         <CCard className="mb-4">
-          <CCardHeader>Polar Area Chart</CCardHeader>
+          <CCardHeader>Polar Area</CCardHeader>
           <CCardBody>
             <CChartPolarArea
               data={{
-                labels: ['Red', 'Green', 'Yellow', 'Grey', 'Blue'],
+                labels,
                 datasets: [
                   {
-                    data: [11, 16, 7, 3, 14],
-                    backgroundColor: ['#FF6384', '#4BC0C0', '#FFCE56', '#E7E9ED', '#36A2EB'],
+                    data: values,
+                    backgroundColor: colors,
                   },
                 ],
               }}
@@ -131,48 +166,34 @@ const Charts = () => {
           </CCardBody>
         </CCard>
       </CCol>
+
+      {/* RADAR */}
       <CCol xs={6}>
         <CCard className="mb-4">
           <CCardHeader>Radar Chart</CCardHeader>
           <CCardBody>
             <CChartRadar
               data={{
-                labels: [
-                  'Eating',
-                  'Drinking',
-                  'Sleeping',
-                  'Designing',
-                  'Coding',
-                  'Cycling',
-                  'Running',
-                ],
+                labels,
                 datasets: [
                   {
-                    label: 'My First dataset',
-                    backgroundColor: 'rgba(220, 220, 220, 0.2)',
-                    borderColor: 'rgba(220, 220, 220, 1)',
-                    pointBackgroundColor: 'rgba(220, 220, 220, 1)',
-                    pointBorderColor: '#fff',
-                    pointHighlightFill: '#fff',
-                    pointHighlightStroke: 'rgba(220, 220, 220, 1)',
-                    data: [65, 59, 90, 81, 56, 55, 40],
+                    label: 'Current',
+                    backgroundColor: 'rgba(54,162,235,0.2)',
+                    borderColor: '#36A2EB',
+                    data: values,
                   },
                   {
-                    label: 'My Second dataset',
-                    backgroundColor: 'rgba(151, 187, 205, 0.2)',
-                    borderColor: 'rgba(151, 187, 205, 1)',
-                    pointBackgroundColor: 'rgba(151, 187, 205, 1)',
-                    pointBorderColor: '#fff',
-                    pointHighlightFill: '#fff',
-                    pointHighlightStroke: 'rgba(151, 187, 205, 1)',
-                    data: [28, 48, 40, 19, 96, 27, 100],
+                    label: 'Previous',
+                    backgroundColor: 'rgba(255,99,132,0.2)',
+                    borderColor: '#FF6384',
+                    data: values.map((v) => Math.round(v * 0.8)),
                   },
                 ],
               }}
             />
           </CCardBody>
         </CCard>
-      </CCol> */}
+      </CCol>
     </CRow>
   )
 }

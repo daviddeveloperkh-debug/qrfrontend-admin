@@ -63,7 +63,12 @@ const AppSidebar = () => {
       }}
     >
       <CSidebarHeader className="border-bottom">
-        <Link to="/dashboard">
+        <Link
+          to="/"
+          className="text-decoration-none d-flex align-items-center gap-2"
+          style={{ fontSize: '32px' }}
+        >
+          HAVFSIZMEHNAT
           {/* <img className="w-75" src={IMAGES.logo} alt="" /> */}
           {/* <CIcon customClassName="sidebar-brand-full" icon={logo} height={32} />
           <CIcon customClassName="sidebar-brand-narrow" icon={sygnet} height={32} /> */}
