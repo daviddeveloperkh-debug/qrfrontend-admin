@@ -96,7 +96,7 @@ const Table = ({ data }) => {
     },
     {
       key: 'name',
-      label: 'Имя',
+      label: 'Ismi',
       _style: { width: '250px' },
       filter: () => {
         return (
@@ -113,7 +113,7 @@ const Table = ({ data }) => {
     },
     {
       key: 'login',
-      label: 'Логин',
+      label: 'Login',
       _style: { width: '250px' },
       filter: () => {
         return (
@@ -130,7 +130,7 @@ const Table = ({ data }) => {
     },
     {
       key: 'role',
-      label: 'Роль',
+      label: 'Admin roli',
       _style: { width: '110px' },
       filter: () => {
         return (
@@ -157,7 +157,7 @@ const Table = ({ data }) => {
     },
     {
       key: 'show_details',
-      label: 'Детали',
+      label: '',
       _style: { width: '60px' },
       filter: false,
       sorter: false,

@@ -104,7 +104,7 @@ const Edit = () => {
           value={params.given}
           onChange={handleInputChange}
           required
-          label="Данный"
+          label="Berildi (tashkilot nomi: SANOAT XAVFSIZLIGI DQ)"
         />
       ),
     },
@@ -115,7 +115,7 @@ const Edit = () => {
           value={params.firstName}
           onChange={handleInputChange}
           required
-          label="Имя"
+          label="Ismi"
         />
       ),
     },
@@ -126,7 +126,7 @@ const Edit = () => {
           value={params.lastName}
           onChange={handleInputChange}
           required
-          label="Фамилия"
+          label="Familiya"
         />
       ),
     },
@@ -137,7 +137,7 @@ const Edit = () => {
           value={params.patronymic}
           onChange={handleInputChange}
           required
-          label="Отчество"
+          label="Otasining ismi"
         />
       ),
     },
@@ -148,7 +148,7 @@ const Edit = () => {
           value={params.specialty}
           onChange={handleInputChange}
           required
-          label="Специализация"
+          label="Mutaxassisligi"
         />
       ),
     },
@@ -159,7 +159,7 @@ const Edit = () => {
           value={params.qualification}
           onChange={handleInputChange}
           required
-          label="Квалификация"
+          label="Malakasi (masalan: ATT. 4-razryad)"
         />
       ),
     },
@@ -177,10 +177,10 @@ const Edit = () => {
               handleSelectChange('birthDate', '')
             }
           }}
-          placeholder={'Выберите время'}
+          placeholder={'Vaqtni tanlang'}
           locale="en-US"
           required
-          label="Дата рождения"
+          label="Tug'ilgan sana"
         />
       ),
     },
@@ -191,7 +191,7 @@ const Edit = () => {
           value={params.passportNumber}
           onChange={handleInputChange}
           required
-          label="Номер паспорта"
+          label="Pasport raqami"
         />
       ),
     },
@@ -202,7 +202,7 @@ const Edit = () => {
           value={params.certificateNumber}
           onChange={handleInputChange}
           required
-          label="Номер сертификата"
+          label="Guvohnoma raqami (faqat raqam kiriting)"
         />
       ),
     },
@@ -213,7 +213,7 @@ const Edit = () => {
           value={params.protocolNumber}
           onChange={handleInputChange}
           required
-          label="Номер протокола"
+          label="Bayonnoma raqami"
         />
       ),
     },
@@ -231,10 +231,10 @@ const Edit = () => {
               handleSelectChange('protocolRegistrationDate', '')
             }
           }}
-          placeholder={'Выберите время'}
+          placeholder={'Vaqtni tanlang'}
           locale="en-US"
           required
-          label="Дата регистрации протокола"
+          label="Bayonnoma roʻyxatdan oʻtgan sana"
         />
       ),
     },
@@ -245,7 +245,7 @@ const Edit = () => {
           value={params.commissionChairman}
           onChange={handleInputChange}
           required
-          label="Председатель комиссии"
+          label="Komissiya raisi"
         />
       ),
     },
@@ -256,10 +256,10 @@ const Edit = () => {
             ref={fileInputRef}
             type="file"
             onChange={(e) => handleFileChange(e, 'file')}
-            label="Картинка"
+            label="Rasm"
           />
           <CButton color="danger" onClick={handleRemoveImage}>
-            Удалить
+            O'chirish
           </CButton>
           {params?.file && (
             <div className="w-100">
@@ -287,11 +287,11 @@ const Edit = () => {
         const value = msg.children.props.value
         if (msg.children.props.options?.length > 0) {
           if (value?.value === undefined || value?.value === null || value?.value === '') {
-            toast.error(`${msg.label} - Заполните`)
+            toast.error(`${msg.label} - To\'ldiring`)
           }
         } else {
           if (value === undefined || value === null || value === '') {
-            toast.error(`${msg.label} - Заполните`)
+            toast.error(`${msg.label} - To\'ldiring`)
           }
         }
       })
@@ -302,7 +302,7 @@ const Edit = () => {
       edit(id, searchParams.get('year'), data)
         .then((res) => {
           if (res?.success) {
-            toast.success('Успешно изменен')
+            toast.success("Muvaffaqiyatli o'zgardi")
             navigate('/user' + helperQuery)
           } else {
             toast.error(res?.error?.message)
@@ -343,7 +343,7 @@ const Edit = () => {
               disabled={editLoading}
               type="submit"
             >
-              Изменить
+              O'zgartirish
             </CLoadingButton>
           </CCardFooter>
         </CForm>

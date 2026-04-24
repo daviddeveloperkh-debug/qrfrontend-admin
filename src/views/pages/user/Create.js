@@ -64,7 +64,7 @@ const Create = () => {
           value={params.given}
           onChange={handleInputChange}
           required
-          label="Данный"
+          label="Berildi (tashkilot nomi: SANOAT XAVFSIZLIGI DQ)"
         />
       ),
     },
@@ -75,7 +75,7 @@ const Create = () => {
           value={params.firstName}
           onChange={handleInputChange}
           required
-          label="Имя"
+          label="Ismi"
         />
       ),
     },
@@ -86,7 +86,7 @@ const Create = () => {
           value={params.lastName}
           onChange={handleInputChange}
           required
-          label="Фамилия"
+          label="Familiya"
         />
       ),
     },
@@ -97,7 +97,7 @@ const Create = () => {
           value={params.patronymic}
           onChange={handleInputChange}
           required
-          label="Отчество"
+          label="Otasining ismi"
         />
       ),
     },
@@ -108,7 +108,7 @@ const Create = () => {
           value={params.specialty}
           onChange={handleInputChange}
           required
-          label="Специализация"
+          label="Mutaxassisligi"
         />
       ),
     },
@@ -119,7 +119,7 @@ const Create = () => {
           value={params.qualification}
           onChange={handleInputChange}
           required
-          label="Квалификация"
+          label="Malakasi (masalan: ATT. 4-razryad)"
         />
       ),
     },
@@ -137,10 +137,10 @@ const Create = () => {
               handleSelectChange('birthDate', '')
             }
           }}
-          placeholder={'Выберите время'}
+          placeholder={'Vaqtni tanlang'}
           locale="en-US"
           required
-          label="Дата рождения"
+          label="Tug'ilgan sana"
         />
       ),
     },
@@ -151,7 +151,7 @@ const Create = () => {
           value={params.passportNumber}
           onChange={handleInputChange}
           required
-          label="Номер паспорта"
+          label="Pasport raqami"
         />
       ),
     },
@@ -162,7 +162,7 @@ const Create = () => {
           value={params.certificateNumber}
           onChange={handleInputChange}
           required
-          label="Номер сертификата"
+          label="Guvohnoma raqami (faqat raqam kiriting)"
         />
       ),
     },
@@ -173,7 +173,7 @@ const Create = () => {
           value={params.protocolNumber}
           onChange={handleInputChange}
           required
-          label="Номер протокола"
+          label="Bayonnoma raqami"
         />
       ),
     },
@@ -191,10 +191,10 @@ const Create = () => {
               handleSelectChange('protocolRegistrationDate', '')
             }
           }}
-          placeholder={'Выберите время'}
+          placeholder={'Vaqtni tanlang'}
           locale="en-US"
           required
-          label="Дата регистрации протокола"
+          label="Bayonnoma roʻyxatdan oʻtgan sana"
         />
       ),
     },
@@ -205,7 +205,7 @@ const Create = () => {
           value={params.commissionChairman}
           onChange={handleInputChange}
           required
-          label="Председатель комиссии"
+          label="Komissiya raisi"
         />
       ),
     },
@@ -216,10 +216,10 @@ const Create = () => {
             ref={fileInputRef}
             type="file"
             onChange={(e) => handleFileChange(e, 'file')}
-            label="Картинка"
+            label="Rasm"
           />
           <CButton color="danger" onClick={handleRemoveImage}>
-            Удалить
+            O'chirish
           </CButton>
           {params?.file && (
             <div className="w-100 mt-2">
@@ -246,10 +246,10 @@ const Create = () => {
         const label = msg.children.props.label
         if (msg.children.props.options?.length > 0) {
           if (value?.value === undefined || value?.value === null || value?.value === '') {
-            toast.error(`${label} - Заполните`)
+            toast.error(`${label} - To\'ldiring`)
           }
         } else if (value === undefined || value === null || value === '') {
-          toast.error(`${label} - Заполните`)
+          toast.error(`${label} - To\'ldiring`)
         }
       })
     } else {
@@ -259,7 +259,7 @@ const Create = () => {
       create(data)
         .then((res) => {
           if (res?.success) {
-            toast.success('Успешно создано')
+            toast.success("Muvaffaqiyatli yaratildi")
             navigate('/user' + helperQuery)
             setValidated(false)
           } else {
@@ -295,7 +295,7 @@ const Create = () => {
               disabled={createLoading}
               type="submit"
             >
-              Создать
+              Yaratish
             </CLoadingButton>
           </CCardFooter>
         </CForm>

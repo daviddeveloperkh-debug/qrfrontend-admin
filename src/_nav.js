@@ -15,19 +15,19 @@ export const permissionRoles = [adminRole, superAdminRole, managerRole, buxgalte
 const _nav = [
   {
     component: CNavItem,
-    name: 'Дашбоард',
+    name: 'Dashboard',
     to: `/`,
     icon: <CIcon icon={cilGradient} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Пользователи',
+    name: 'Foydalanuvchilar',
     to: `/user${helperQuery}`,
     icon: <CIcon icon={cilGroup} customClassName="nav-icon" />,
   },
   {
     component: CNavItem,
-    name: 'Админы',
+    name: 'Adminlar',
     to: `/admins${helperQuery}`,
     icon: <CIcon icon={cilGroup} customClassName="nav-icon" />,
   },

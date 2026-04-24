@@ -99,7 +99,7 @@ const Table = ({ data }) => {
     // },
     {
       key: 'firstName',
-      label: 'Имя',
+      label: 'Ismi',
       _style: { width: '150px' },
       filter: () => {
         return (
@@ -116,7 +116,7 @@ const Table = ({ data }) => {
     },
     {
       key: 'lastName',
-      label: 'Фамилия',
+      label: 'Familiya',
       _style: { width: '150px' },
       filter: () => {
         return (
@@ -133,7 +133,7 @@ const Table = ({ data }) => {
     },
     {
       key: 'patronymic',
-      label: 'Отчество',
+      label: 'Otasining ismi',
       _style: { width: '150px' },
       filter: () => {
         return (
@@ -150,7 +150,7 @@ const Table = ({ data }) => {
     },
     {
       key: 'given',
-      label: 'Данный',
+      label: 'Berildi',
       _style: { width: '250px' },
       filter: () => {
         return (
@@ -195,7 +195,7 @@ const Table = ({ data }) => {
     // },
     {
       key: 'passportNumber',
-      label: 'Паспорт',
+      label: 'Passport raqami',
       _style: { width: '110px' },
       filter: () => {
         return (
@@ -212,7 +212,7 @@ const Table = ({ data }) => {
     },
     {
       key: 'certificateNumber',
-      label: 'Номер сертификата',
+      label: 'Guvohnoma raqami (faqat raqam kiriting)',
       _style: { width: '110px' },
       filter: () => {
         return (
@@ -229,7 +229,7 @@ const Table = ({ data }) => {
     },
     {
       key: 'qualification',
-      label: 'Квалификация',
+      label: 'Malakasi (masalan: ATT. 4-razryad)',
       _style: { width: '110px' },
       filter: () => {
         return (
@@ -246,7 +246,7 @@ const Table = ({ data }) => {
     },
     {
       key: 'specialty',
-      label: 'Специализация',
+      label: 'Mutaxassisligi',
       _style: { width: '110px' },
       filter: () => {
         return (
@@ -263,7 +263,7 @@ const Table = ({ data }) => {
     },
     {
       key: 'protocolNumber',
-      label: 'Номер протокола',
+      label: 'Bayonnoma raqami',
       _style: { width: '110px' },
       filter: () => {
         return (
@@ -280,7 +280,7 @@ const Table = ({ data }) => {
     },
     {
       key: 'protocolRegistrationDate',
-      label: 'Дата регистрации протокола',
+      label: 'Bayonnoma ro\'yhatga olingan sana',
       _style: { width: '110px' },
       filter: () => {
         return (
@@ -297,7 +297,7 @@ const Table = ({ data }) => {
     },
     {
       key: 'commissionChairman',
-      label: 'Председатель комиссии',
+      label: 'Komissiya raisi',
       _style: { width: '110px' },
       filter: () => {
         return (
@@ -314,7 +314,7 @@ const Table = ({ data }) => {
     },
     {
       key: 'year',
-      label: 'Год',
+      label: 'Yili',
       _style: { width: '110px' },
       filter: () => {
         return (
@@ -331,7 +331,7 @@ const Table = ({ data }) => {
     },
     {
       key: 'birthDate',
-      label: 'Дата рождения',
+      label: 'Tug\'ilgan sana',
       _style: { width: '200px' },
       filter: () => {
         return (
@@ -347,7 +347,7 @@ const Table = ({ data }) => {
     },
     {
       key: 'createdAt',
-      label: 'Время',
+      label: 'Vaqt',
       _style: { width: '200px' },
       filter: () => {
         return (
@@ -363,7 +363,7 @@ const Table = ({ data }) => {
     },
     {
       key: 'show_details',
-      label: 'Детали',
+      label: '',
       _style: { width: '60px' },
       filter: false,
       sorter: false,

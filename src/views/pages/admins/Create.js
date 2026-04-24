@@ -45,7 +45,7 @@ const Create = () => {
           value={params.name}
           onChange={handleInputChange}
           required
-          label="Имя"
+          label="Ismi"
         />
       ),
     },
@@ -58,7 +58,7 @@ const Create = () => {
           }))}
           value={params?.role}
           onChange={(e) => handleSelectChange('role', e)}
-          label="Роль"
+          label="Admin roli"
           required
         />
       ),
@@ -70,12 +70,12 @@ const Create = () => {
           value={params.login}
           onChange={handleInputChange}
           required
-          label="Логин"
+          label="Login"
         />
       ),
     },
     {
-      label: 'Пароль',
+      label: 'Parol',
       children: (
         <div className="position-relative">
           <CFormInput
@@ -83,7 +83,7 @@ const Create = () => {
             value={params.password}
             onChange={handleInputChange}
             style={{ width: '65%' }}
-            label="Пароль"
+            label="Parol"
           />
           <div
             className="d-flex align-items-center gap-3 mt-2"
@@ -93,7 +93,7 @@ const Create = () => {
               <CIcon icon={cilCopy} title="Скопировать" />
             </CButton>
             <CButton color="primary" onClick={generatePassword}>
-              Создать пароль
+              Parol yaratish
             </CButton>
           </div>
         </div>
@@ -112,10 +112,10 @@ const Create = () => {
         const label = msg.children.props.label
         if (msg.children.props.options?.length > 0) {
           if (value?.value === undefined || value?.value === null || value?.value === '') {
-            toast.error(`${label} - Заполните`)
+            toast.error(`${label} - To\'ldiring`)
           }
         } else if (value === undefined || value === null || value === '') {
-          toast.error(`${label} - Заполните`)
+          toast.error(`${label} - To\'ldiring`)
         }
       })
     } else {
@@ -124,7 +124,7 @@ const Create = () => {
       setValidated(true)
       create(data)
         .then((res) => {
-          toast.success('Успешно создано')
+          toast.success('Muvaffaqiyatli yaratildi')
           navigate('/admins' + helperQuery)
           setValidated(false)
         })
@@ -154,7 +154,7 @@ const Create = () => {
               disabled={createLoading}
               type="submit"
             >
-              Создать
+              Yaratish
             </CLoadingButton>
           </CCardFooter>
         </CForm>

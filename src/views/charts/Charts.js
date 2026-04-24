@@ -28,14 +28,14 @@ const Charts = () => {
     <CRow>
       <CCol xs={12}>
         <CCard className="mb-4">
-          <CCardHeader>Статистика</CCardHeader>
+          <CCardHeader>Statistika</CCardHeader>
           <CCardBody>
             <CChartBar
               data={{
                 labels: list?.map((item) => formatMonth(item.month)),
                 datasets: [
                   {
-                    label: 'Пользователи',
+                    label: 'Foydalanuvchilar',
                     backgroundColor: '#f87979',
                     data: list?.map((item) => item.total),
                   },

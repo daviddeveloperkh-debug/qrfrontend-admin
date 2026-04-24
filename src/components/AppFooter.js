@@ -5,7 +5,7 @@ const AppFooter = () => {
   return (
     <CFooter className="px-4">
       <div className="text-center w-100">
-        &copy; 2026 QR Project Admin. All rights reserved.
+        &copy; 2026 QR Project Admin. Barcha huquqlar himoyalangan.
         {/* <a href="https://coreui.io" target="_blank" rel="noopener noreferrer">
           CoreUI
         </a>

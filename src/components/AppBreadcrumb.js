@@ -33,7 +33,7 @@ const AppBreadcrumb = () => {
 
   return (
     <CBreadcrumb className="my-0" style={{ '--cui-breadcrumb-divider': '">"' }}>
-      <CBreadcrumbItem href="#/dashboard">Главная</CBreadcrumbItem>
+      <CBreadcrumbItem href="#/dashboard">Asosiy</CBreadcrumbItem>
       {breadcrumbs.map((breadcrumb, index) => {
         return (
           <CBreadcrumbItem

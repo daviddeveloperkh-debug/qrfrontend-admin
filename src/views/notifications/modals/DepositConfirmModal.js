@@ -103,7 +103,7 @@ const DepositConfirmModal = ({ onClose, item, loading }) => {
               depositConfirm(data).then((res) => {
                 if (res?.success) {
                   closeModal('depositConfirm')
-                  toast.success('Успешно изменен')
+                  toast.success("Muvaffaqiyatli o'zgardi")
                   location.reload()
                 }
               })

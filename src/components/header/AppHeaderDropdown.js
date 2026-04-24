@@ -94,7 +94,7 @@ const AppHeaderDropdown = () => {
         <Link to={'/login'}>
           <CDropdownItem>
             <CIcon icon={cilRoom} className="me-2" />
-            Выйти
+            Chiqish
           </CDropdownItem>
         </Link>
       </CDropdownMenu>

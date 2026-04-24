@@ -182,10 +182,10 @@ const Edit = () => {
         const value = msg.children.props.value
         if (msg.children.props.options?.length > 0) {
           if (value?.value === undefined || value?.value === null || value?.value === '') {
-            toast.error(`${msg.label} - Заполните`)
+            toast.error(`${msg.label} - To\'ldiring`)
           }
         } else if (value === undefined || value === null || value === '') {
-          toast.error(`${msg.label} - Заполните`)
+          toast.error(`${msg.label} - To\'ldiring`)
         }
       })
     } else {
@@ -194,7 +194,7 @@ const Edit = () => {
       edit(id, data)
         .then((res) => {
           if (res?.success) {
-            toast.success('Успешно изменен')
+            toast.success("Muvaffaqiyatli o'zgardi")
             navigate('/welder-certificates')
           } else {
             toast.error(res?.error?.message)

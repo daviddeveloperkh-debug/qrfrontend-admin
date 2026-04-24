@@ -21,15 +21,15 @@ const ConfirmModal = ({ onConfirm, onClose, id, loading }) => {
       }}
     >
       <CHeader>
-        <CModalTitle>Подтверждение ( ID: {id} )</CModalTitle>
+        <CModalTitle>Tasdiqlash ( ID: {id} )</CModalTitle>
       </CHeader>
-      <CModalBody>Вы точно хотите удалить?</CModalBody>
+      <CModalBody>Siz rostdan ham o'chirmoqchimisiz?</CModalBody>
       <CModalFooter>
         <CButton color="secondary" onClick={() => closeModal('confirm')}>
-          Закрыть
+          Yopish
         </CButton>
         <CLoadingButton disabled={loading} loading={loading} color="primary" onClick={onConfirm}>
-          Удалить
+          O'chirish
         </CLoadingButton>
       </CModalFooter>
     </CModal>

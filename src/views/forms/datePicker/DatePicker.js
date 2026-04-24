@@ -66,7 +66,7 @@ const DatePicker = ({ params, handleSearch, column, label, style, updateSearchPa
         }
         style={style}
         locale="ru-RU"
-        placeholder={['Дата нач', 'дата окон']}
+        placeholder={['Boshlanish sanasi', 'Tugash sanasi']}
         inputDateParse={(date) => parse(date, 'yyyy-MM-dd', new Date())}
         inputDateFormat={(date) => format(new Date(date), 'yyyy-MM-dd')}
         onStartDateChange={(date) => handleDateChange(date, endDate)}

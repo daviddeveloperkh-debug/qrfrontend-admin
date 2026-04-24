@@ -1,1 +1,215 @@
-import{F as B,n as F,r as u,j as t,B as p}from"./index-bjzi2NvD.js";import{w as G}from"./modals-CKxuF1KC.js";import{C as c,a as q}from"./CFormInput-C336hbw-.js";import{C as g}from"./CDatePicker-C3Z-gM9k.js";import{C as P}from"./CCard-R4u2YyXY.js";import{C as E}from"./CCardHeader-NjExkzpA.js";import{C as I}from"./CCardTitle-BIeRUkou.js";import{C as L}from"./CCardBody-BY8Sxn6x.js";import{C as V}from"./CForm-DnX0btTe.js";import{C as k}from"./CRow-CndJ_9x5.js";import{C as R}from"./CCol-DszJQxcp.js";import{C as T}from"./CInputGroup-JE7GE1RW.js";import{C as U}from"./CCardFooter-D4YFsGe1.js";import{C as $}from"./CLoadingButton-CoARBVM3.js";import{f as h,p as j}from"./parse-n3RXTkBv.js";import"./auth-gSn_sS9R.js";import"./useForkedRef-CzJsXXcR.js";import"./CFocusTrap-CtPSLGIl.js";import"./DefaultLayout-DrDCyHef.js";import"./index.esm-BX2-GJNA.js";const de=()=>{const{id:f}=B(),b=F(),{detail:e,getDetail:v,edit:N,editLoading:D,getStatics:H,staticsLoading:z,statics:A}=G(),[r,y]=u.useState({}),[S,w]=u.useState(!1),o=a=>{const{name:n,value:d}=a.target;y({...r,[n]:d})},l=(a,n)=>{y({...r,[a]:n})};u.useEffect(()=>{v(f)},[f]),u.useEffect(()=>{y(()=>({introStatement:e==null?void 0:e.introStatement,theoryGrade:e==null?void 0:e.theoryGrade,practiceGrade:e==null?void 0:e.practiceGrade,qualificationDetails:e==null?void 0:e.qualificationDetails,issuanceBasis:e==null?void 0:e.issuanceBasis,issuingBody:e==null?void 0:e.issuingBody,city:e==null?void 0:e.city,certificatesName:e==null?void 0:e.certificatesName,certificateNo:e==null?void 0:e.certificateNo,issueDate:e==null?void 0:e.issueDate,expiryDate:e==null?void 0:e.expiryDate}))},[e]);const m=[{label:"Вводное заявление",children:t.jsx(c,{name:"introStatement",value:r.introStatement,onChange:o})},{label:"Теорическая оценка",children:t.jsx(c,{name:"theoryGrade",value:r.theoryGrade,onChange:o})},{label:"Практическая оценка",children:t.jsx(c,{name:"practiceGrade",value:r.practiceGrade,onChange:o})},{label:"Детали квалификации",children:t.jsx(c,{name:"qualificationDetails",value:r.qualificationDetails,onChange:o})},{label:"Основание для выдачи",children:t.jsx(c,{name:"issuanceBasis",value:r.issuanceBasis,onChange:o})},{label:"Орган выдачи",children:t.jsx(c,{name:"issuingBody",value:r.issuingBody,onChange:o})},{label:"Город",children:t.jsx(c,{name:"city",value:r.city,onChange:o})},{label:"Название сертификата",children:t.jsx(c,{name:"certificatesName",value:r.certificatesName,onChange:o})},{label:"Номер сертификата",children:t.jsx(c,{name:"certificateNo",value:r.certificateNo,onChange:o})},{label:"Дата выдачи",children:t.jsx(g,{date:r.issueDate?new Date(r.issueDate):null,inputDateParse:a=>j(a,"yyyy-MM-dd",new Date),inputDateFormat:a=>h(new Date(a),"yyyy-MM-dd"),onDateChange:a=>{if(a){const n=h(new Date(a),"yyyy-MM-dd");l("issueDate",n)}else l("issueDate","")},placeholder:"Выберите время",locale:"en-US"})},{label:"Дата истечения",children:t.jsx(g,{date:r.expiryDate?new Date(r.expiryDate):null,inputDateParse:a=>j(a,"yyyy-MM-dd",new Date),inputDateFormat:a=>h(new Date(a),"yyyy-MM-dd"),onDateChange:a=>{if(a){const n=h(new Date(a),"yyyy-MM-dd");l("expiryDate",n)}else l("expiryDate","")},placeholder:"Выберите время",locale:"en-US"})}],M=a=>{var d;if(a.preventDefault(),a.currentTarget.checkValidity()===!1)a.preventDefault(),a.stopPropagation(),m.filter(s=>s.children.props.required).map(s=>{var x;const i=s.children.props.value;((x=s.children.props.options)==null?void 0:x.length)>0?((i==null?void 0:i.value)===void 0||(i==null?void 0:i.value)===null||(i==null?void 0:i.value)==="")&&p.error(`${s.label} - Заполните`):(i==null||i==="")&&p.error(`${s.label} - Заполните`)});else{const C={...r};C.status=((d=r.status)==null?void 0:d.value)||0,N(f,C).then(s=>{var i;s!=null&&s.success?(p.success("Успешно изменен"),b("/welder-certificates")):p.error((i=s==null?void 0:s.error)==null?void 0:i.message)}).catch(s=>console.log("err",s))}w(!0)};return t.jsxs(P,{children:[t.jsx(E,{children:t.jsxs(I,{className:"mb",children:[e==null?void 0:e.name," ( ID: ",e==null?void 0:e.id," )"]})}),t.jsx(L,{children:t.jsxs(V,{noValidate:!0,validated:S,onSubmit:M,children:[m==null?void 0:m.map((a,n)=>t.jsxs(k,{className:"mb-3",children:[t.jsxs(q,{className:"col-sm-2 col-form-label",children:[a.label," ",a.children.props.required&&t.jsx("span",{style:{color:"red"},children:"*"})]}),t.jsx(R,{sm:10,children:t.jsx(T,{children:a.children})})]},n)),t.jsx(U,{className:"text-end",children:t.jsx($,{color:"primary",loading:D,disabled:D,type:"submit",children:"Изменить"})})]})})]})};export{de as default};
+import { F as B, n as F, r as u, j as t, B as p } from './index-bjzi2NvD.js'
+import { w as G } from './modals-CKxuF1KC.js'
+import { C as c, a as q } from './CFormInput-C336hbw-.js'
+import { C as g } from './CDatePicker-C3Z-gM9k.js'
+import { C as P } from './CCard-R4u2YyXY.js'
+import { C as E } from './CCardHeader-NjExkzpA.js'
+import { C as I } from './CCardTitle-BIeRUkou.js'
+import { C as L } from './CCardBody-BY8Sxn6x.js'
+import { C as V } from './CForm-DnX0btTe.js'
+import { C as k } from './CRow-CndJ_9x5.js'
+import { C as R } from './CCol-DszJQxcp.js'
+import { C as T } from './CInputGroup-JE7GE1RW.js'
+import { C as U } from './CCardFooter-D4YFsGe1.js'
+import { C as $ } from './CLoadingButton-CoARBVM3.js'
+import { f as h, p as j } from './parse-n3RXTkBv.js'
+import './auth-gSn_sS9R.js'
+import './useForkedRef-CzJsXXcR.js'
+import './CFocusTrap-CtPSLGIl.js'
+import './DefaultLayout-DrDCyHef.js'
+import './index.esm-BX2-GJNA.js'
+const de = () => {
+  const { id: f } = B(),
+    b = F(),
+    {
+      detail: e,
+      getDetail: v,
+      edit: N,
+      editLoading: D,
+      getStatics: H,
+      staticsLoading: z,
+      statics: A,
+    } = G(),
+    [r, y] = u.useState({}),
+    [S, w] = u.useState(!1),
+    o = (a) => {
+      const { name: n, value: d } = a.target
+      y({ ...r, [n]: d })
+    },
+    l = (a, n) => {
+      y({ ...r, [a]: n })
+    }
+  u.useEffect(() => {
+    v(f)
+  }, [f]),
+    u.useEffect(() => {
+      y(() => ({
+        introStatement: e == null ? void 0 : e.introStatement,
+        theoryGrade: e == null ? void 0 : e.theoryGrade,
+        practiceGrade: e == null ? void 0 : e.practiceGrade,
+        qualificationDetails: e == null ? void 0 : e.qualificationDetails,
+        issuanceBasis: e == null ? void 0 : e.issuanceBasis,
+        issuingBody: e == null ? void 0 : e.issuingBody,
+        city: e == null ? void 0 : e.city,
+        certificatesName: e == null ? void 0 : e.certificatesName,
+        certificateNo: e == null ? void 0 : e.certificateNo,
+        issueDate: e == null ? void 0 : e.issueDate,
+        expiryDate: e == null ? void 0 : e.expiryDate,
+      }))
+    }, [e])
+  const m = [
+      {
+        label: 'Вводное заявление',
+        children: t.jsx(c, { name: 'introStatement', value: r.introStatement, onChange: o }),
+      },
+      {
+        label: 'Теорическая оценка',
+        children: t.jsx(c, { name: 'theoryGrade', value: r.theoryGrade, onChange: o }),
+      },
+      {
+        label: 'Практическая оценка',
+        children: t.jsx(c, { name: 'practiceGrade', value: r.practiceGrade, onChange: o }),
+      },
+      {
+        label: 'Детали квалификации',
+        children: t.jsx(c, {
+          name: 'qualificationDetails',
+          value: r.qualificationDetails,
+          onChange: o,
+        }),
+      },
+      {
+        label: 'Основание для выдачи',
+        children: t.jsx(c, { name: 'issuanceBasis', value: r.issuanceBasis, onChange: o }),
+      },
+      {
+        label: 'Орган выдачи',
+        children: t.jsx(c, { name: 'issuingBody', value: r.issuingBody, onChange: o }),
+      },
+      { label: 'Город', children: t.jsx(c, { name: 'city', value: r.city, onChange: o }) },
+      {
+        label: 'Название сертификата',
+        children: t.jsx(c, { name: 'certificatesName', value: r.certificatesName, onChange: o }),
+      },
+      {
+        label: 'Номер сертификата',
+        children: t.jsx(c, { name: 'certificateNo', value: r.certificateNo, onChange: o }),
+      },
+      {
+        label: 'Дата выдачи',
+        children: t.jsx(g, {
+          date: r.issueDate ? new Date(r.issueDate) : null,
+          inputDateParse: (a) => j(a, 'yyyy-MM-dd', new Date()),
+          inputDateFormat: (a) => h(new Date(a), 'yyyy-MM-dd'),
+          onDateChange: (a) => {
+            if (a) {
+              const n = h(new Date(a), 'yyyy-MM-dd')
+              l('issueDate', n)
+            } else l('issueDate', '')
+          },
+          placeholder: 'Выберите время',
+          locale: 'en-US',
+        }),
+      },
+      {
+        label: 'Дата истечения',
+        children: t.jsx(g, {
+          date: r.expiryDate ? new Date(r.expiryDate) : null,
+          inputDateParse: (a) => j(a, 'yyyy-MM-dd', new Date()),
+          inputDateFormat: (a) => h(new Date(a), 'yyyy-MM-dd'),
+          onDateChange: (a) => {
+            if (a) {
+              const n = h(new Date(a), 'yyyy-MM-dd')
+              l('expiryDate', n)
+            } else l('expiryDate', '')
+          },
+          placeholder: 'Выберите время',
+          locale: 'en-US',
+        }),
+      },
+    ],
+    M = (a) => {
+      var d
+      if ((a.preventDefault(), a.currentTarget.checkValidity() === !1))
+        a.preventDefault(),
+          a.stopPropagation(),
+          m
+            .filter((s) => s.children.props.required)
+            .map((s) => {
+              var x
+              const i = s.children.props.value
+              ;((x = s.children.props.options) == null ? void 0 : x.length) > 0
+                ? ((i == null ? void 0 : i.value) === void 0 ||
+                    (i == null ? void 0 : i.value) === null ||
+                    (i == null ? void 0 : i.value) === '') &&
+                  p.error(`${s.label} - To\'ldiring`)
+                : (i == null || i === '') && p.error(`${s.label} - To\'ldiring`)
+            })
+      else {
+        const C = { ...r }
+        ;(C.status = ((d = r.status) == null ? void 0 : d.value) || 0),
+          N(f, C)
+            .then((s) => {
+              var i
+              s != null && s.success
+                ? (p.success("Muvaffaqiyatli o'zgardi"), b('/welder-certificates'))
+                : p.error((i = s == null ? void 0 : s.error) == null ? void 0 : i.message)
+            })
+            .catch((s) => console.log('err', s))
+      }
+      w(!0)
+    }
+  return t.jsxs(P, {
+    children: [
+      t.jsx(E, {
+        children: t.jsxs(I, {
+          className: 'mb',
+          children: [e == null ? void 0 : e.name, ' ( ID: ', e == null ? void 0 : e.id, ' )'],
+        }),
+      }),
+      t.jsx(L, {
+        children: t.jsxs(V, {
+          noValidate: !0,
+          validated: S,
+          onSubmit: M,
+          children: [
+            m == null
+              ? void 0
+              : m.map((a, n) =>
+                  t.jsxs(
+                    k,
+                    {
+                      className: 'mb-3',
+                      children: [
+                        t.jsxs(q, {
+                          className: 'col-sm-2 col-form-label',
+                          children: [
+                            a.label,
+                            ' ',
+                            a.children.props.required &&
+                              t.jsx('span', { style: { color: 'red' }, children: '*' }),
+                          ],
+                        }),
+                        t.jsx(R, { sm: 10, children: t.jsx(T, { children: a.children }) }),
+                      ],
+                    },
+                    n,
+                  ),
+                ),
+            t.jsx(U, {
+              className: 'text-end',
+              children: t.jsx($, {
+                color: 'primary',
+                loading: D,
+                disabled: D,
+                type: 'submit',
+                children: 'Изменить',
+              }),
+            }),
+          ],
+        }),
+      }),
+    ],
+  })
+}
+export { de as default }

@@ -25,29 +25,29 @@ const WelderCertificatesCreate = React.lazy(() => import('./views/pages/welderCe
 const WelderCertificatesEdit = React.lazy(() => import('./views/pages/welderCertificates/Edit'))
 
 const routes = [
-  { path: '/', exact: true, name: 'Home', element: Dashboard },
-  { path: '/user', name: 'Пользователи', element: User },
-  { path: '/user/:id', name: 'Пользователь', element: UserShow },
+  { path: '/', exact: true, name: '', element: Dashboard },
+  { path: '/user', name: 'Foydalanuvchilar', element: User },
+  { path: '/user/:id', name: 'Foydalanuvchi', element: UserShow },
   {
     path: '/user/create',
-    name: 'Создать пользователь',
+    name: 'Foydalanuvchi yaratish',
     element: UserCreate,
   },
   {
     path: '/user/edit/:id',
-    name: 'Изменить пользователь',
+    name: 'Foydalanuvchi tahrirlash',
     element: UserEdit,
   },
-  { path: '/admins', name: 'Админы', element: Admins },
-  { path: '/admins/:id', name: 'Админ', element: AdminsShow },
+  { path: '/admins', name: 'Adminlar', element: Admins },
+  { path: '/admins/:id', name: 'Admin', element: AdminsShow },
   {
     path: '/admins/create',
-    name: 'Создать админ',
+    name: 'Admin yaratish',
     element: AdminsCreate,
   },
   {
     path: '/admins/edit/:id',
-    name: 'Изменить админ',
+    name: 'Admin tahrirlash',
     element: AdminsEdit,
   },
   // {

@@ -72,7 +72,7 @@ const Edit = () => {
           value={params.name}
           onChange={handleInputChange}
           required
-          label="Имя"
+          label="Ismi"
         />
       ),
     },
@@ -85,7 +85,7 @@ const Edit = () => {
           }))}
           value={params?.role}
           onChange={(e) => handleSelectChange('role', e)}
-          label="Роль"
+          label="Admin roli"
           required
         />
       ),
@@ -97,12 +97,12 @@ const Edit = () => {
           value={params.login}
           onChange={handleInputChange}
           required
-          label="Логин"
+          label="Login"
         />
       ),
     },
     {
-      label: 'Пароль',
+      label: 'Parol',
       children: (
         <div className="position-relative">
           <CFormInput
@@ -110,7 +110,7 @@ const Edit = () => {
             value={params.password}
             onChange={handleInputChange}
             style={{ width: '65%' }}
-            label="Пароль"
+            label="Parol"
           />
           <div
             className="d-flex align-items-center gap-3 mt-2"
@@ -120,7 +120,7 @@ const Edit = () => {
               <CIcon icon={cilCopy} title="Скопировать" />
             </CButton>
             <CButton color="primary" onClick={generatePassword}>
-              Создать пароль
+              Parol yaratish
             </CButton>
           </div>
         </div>
@@ -138,11 +138,11 @@ const Edit = () => {
         const value = msg.children.props.value
         if (msg.children.props.options?.length > 0) {
           if (value?.value === undefined || value?.value === null || value?.value === '') {
-            toast.error(`${msg.label} - Заполните`)
+            toast.error(`${msg.label} - To\'ldiring`)
           }
         } else {
           if (value === undefined || value === null || value === '') {
-            toast.error(`${msg.label} - Заполните`)
+            toast.error(`${msg.label} - To\'ldiring`)
           }
         }
       })
@@ -152,7 +152,7 @@ const Edit = () => {
       edit(id, data)
         .then((res) => {
           if (res?.success) {
-            toast.success('Успешно изменен')
+            toast.success("Muvaffaqiyatli o'zgardi")
             navigate('/admins' + helperQuery)
           } else {
             toast.error(res?.error?.message)
@@ -193,7 +193,7 @@ const Edit = () => {
               disabled={editLoading}
               type="submit"
             >
-              Изменить
+              O'zgartirish
             </CLoadingButton>
           </CCardFooter>
         </CForm>

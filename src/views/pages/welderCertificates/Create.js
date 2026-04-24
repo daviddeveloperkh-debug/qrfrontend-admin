@@ -158,10 +158,10 @@ const Create = () => {
         const value = msg.children.props.value
         if (msg.children.props.options?.length > 0) {
           if (value?.value === undefined || value?.value === null || value?.value === '') {
-            toast.error(`${msg.label} - Заполните`)
+            toast.error(`${msg.label} - To\'ldiring`)
           }
         } else if (value === undefined || value === null || value === '') {
-          toast.error(`${msg.label} - Заполните`)
+          toast.error(`${msg.label} - To\'ldiring`)
         }
       })
     } else {
@@ -170,7 +170,7 @@ const Create = () => {
       create(data)
         .then((res) => {
           if (res?.success) {
-            toast.success('Успешно создано')
+            toast.success('Muvaffaqiyatli yaratildi')
             navigate('/welder-certificates')
             setValidated(false)
           } else {

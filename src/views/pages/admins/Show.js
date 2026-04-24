@@ -35,7 +35,7 @@ const Show = () => {
                 {detail?.name} ( ID: {detail?.id} )
               </CCardTitle>
               <CButton href={`#/admins/edit/${detail?.id}`} color="primary" className="ms-auto">
-                Изменить
+                O'zgartirish
               </CButton>
             </CCardGroup>
           </CCardHeader>
@@ -53,7 +53,7 @@ const Show = () => {
               </CCol>
               <CCol xs={{ span: 6 }}>
                 <CCallout className="p-2 m-0" color="primary">
-                  Имя
+                  Ismi
                 </CCallout>
               </CCol>
               <CCol xs={{ span: 6 }}>
@@ -63,7 +63,7 @@ const Show = () => {
               </CCol>
               <CCol xs={{ span: 6 }}>
                 <CCallout className="p-2 m-0" color="primary">
-                  Роль
+                  Admin roli
                 </CCallout>
               </CCol>
               <CCol xs={{ span: 6 }}>
@@ -73,7 +73,7 @@ const Show = () => {
               </CCol>
               <CCol xs={{ span: 6 }}>
                 <CCallout className="p-2 m-0" color="primary">
-                  Логин
+                  Login
                 </CCallout>
               </CCol>
               <CCol xs={{ span: 6 }}>

@@ -9,11 +9,11 @@ const Admins = () => {
         <CCardHeader>
           <CRow>
             <CCol className="d-flex align-items-center">
-              <CCardTitle className="mb-0">Пользователы</CCardTitle>
+              <CCardTitle className="mb-0">Adminlar</CCardTitle>
             </CCol>
             <CCol className="d-flex justify-content-end gap-2">
               <Link to="/admins/create">
-                <CButton color="primary">Создать</CButton>
+                <CButton color="primary">Yaratish</CButton>
               </Link>
             </CCol>
           </CRow>

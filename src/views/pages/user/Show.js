@@ -102,7 +102,7 @@ const Show = () => {
                         color="info"
                         className="text-white"
                       >
-                        Изменить
+                        O'zgartirish
                       </CButton>
                     </CCardGroup>
                   </CCardHeader>
@@ -133,7 +133,7 @@ const Show = () => {
                   <CCardBody>
                     <CRow>
                       <CCol>
-                        Данный
+                        Berilgan tashkilot nomi
                         <CCallout color="info" className="mt-1 py-1">
                           {detail?.given}
                         </CCallout>
@@ -141,7 +141,7 @@ const Show = () => {
                     </CRow>
                     <CRow>
                       <CCol>
-                        Номер сертификата
+                        Guvohnoma raqami
                         <CCallout color="info" className="mt-1 py-1">
                           {detail?.certificateNumber}
                         </CCallout>
@@ -149,13 +149,13 @@ const Show = () => {
                     </CRow>
                     <CRow>
                       <CCol sm={6}>
-                        Номер протокола
+                        Bayonnoma raqami
                         <CCallout color="info" className="mt-1 py-1">
                           {detail?.protocolNumber}
                         </CCallout>
                       </CCol>
                       <CCol sm={6}>
-                        Дата регистрации протокола
+                        Bayonnoma ro'yhatga olingan sana
                         <CCallout color="info" className="mt-1 py-1">
                           {detail?.protocolRegistrationDate}
                         </CCallout>
@@ -163,24 +163,24 @@ const Show = () => {
                     </CRow>
                     <CRow>
                       <CCol>
-                        Председатель комиссии
+                        Komissiya raisi
                         <CCallout color="info" className="mt-1 py-1">
                           {detail?.commissionChairman}
                         </CCallout>
                       </CCol>
                     </CRow>
-                    <CCardSubtitle className="mb-3">Данные пользователя</CCardSubtitle>
+                    <CCardSubtitle className="mb-3">Foydalanuvchi ma'lumotlari</CCardSubtitle>
                     <CListGroup className="user-list">
                       <CListGroupItem>
-                        Дата рождения
+                        Tug'ilgan sana
                         <div>{detail?.birthDate}</div>
                       </CListGroupItem>
                       <CListGroupItem>
-                        Квалификация
+                        Malakasi
                         <div>{detail?.qualification}</div>
                       </CListGroupItem>
                       <CListGroupItem>
-                        Дата создания
+                        Vaqt
                         <CIcon icon={cilAvTimer} />
                         <div>{detail?.createdAt}</div>
                       </CListGroupItem>
@@ -191,7 +191,7 @@ const Show = () => {
               <CCol xl={6}>
                 <CCard>
                   <CCardHeader className="d-flex align-items-center">
-                    <CCardTitle>Линк</CCardTitle>
+                    <CCardTitle>Link</CCardTitle>
                     {!instance.error ? (
                       <CLoadingButton
                         loading={instance.loading}
@@ -200,7 +200,7 @@ const Show = () => {
                         className="ms-auto"
                         onClick={handlePrint}
                       >
-                        Печать
+                        Chop etish
                       </CLoadingButton>
                     ) : null}
                   </CCardHeader>
@@ -214,11 +214,11 @@ const Show = () => {
                       />
                     </div>
                     <div className="w-75 mx-auto mt-4">
-                      <CFormLabel className="text-center">Напишите заголавок</CFormLabel>
+                      <CFormLabel className="text-center">Sarlavha yozing</CFormLabel>
                       <CFormInput
                         className=""
                         onChange={(e) => setQrTitle(e.target.value)}
-                        placeholder="Заголовок для QR"
+                        placeholder="QR uchun sarlavha yozing"
                       />
                     </div>
                   </CCardBody>
