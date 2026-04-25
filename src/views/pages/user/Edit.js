@@ -200,7 +200,7 @@ const Edit = () => {
         <CFormInput
           name="certificateNumber"
           value={params.certificateNumber}
-          onChange={handleInputChange}
+          onChange={(e) => handleSelectChange('certificateNumber', Number(e.target.value))}
           required
           label="Guvohnoma raqami (faqat raqam kiriting)"
         />

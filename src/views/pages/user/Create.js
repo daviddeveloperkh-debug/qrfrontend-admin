@@ -41,6 +41,7 @@ const Create = () => {
       fileInputRef.current.value = ''
     }
   }
+  console.log(params)
 
   const forms = [
     // {
@@ -159,8 +160,9 @@ const Create = () => {
       children: (
         <CFormInput
           name="certificateNumber"
+          type="number"
           value={params.certificateNumber}
-          onChange={handleInputChange}
+          onChange={(e) => handleSelectChange('certificateNumber', Number(e.target.value))}
           required
           label="Guvohnoma raqami (faqat raqam kiriting)"
         />
@@ -259,7 +261,7 @@ const Create = () => {
       create(data)
         .then((res) => {
           if (res?.success) {
-            toast.success("Muvaffaqiyatli yaratildi")
+            toast.success('Muvaffaqiyatli yaratildi')
             navigate('/user' + helperQuery)
             setValidated(false)
           } else {
