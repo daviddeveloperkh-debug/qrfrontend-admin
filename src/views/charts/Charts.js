@@ -13,34 +13,7 @@ import {
 import { statsStore } from '../../store/index'
 
 const Charts = () => {
-  const { getList } = statsStore()
-  const list = [
-    {
-      month: '2026-04',
-      total: 142,
-    },
-    {
-      month: '2026-05',
-      total: 143,
-    },
-    {
-      month: '2026-06',
-      total: 324,
-    },
-    {
-      month: '2026-07',
-      total: 12,
-    },
-    {
-      month: '2026-08',
-      total: 53,
-    },
-    {
-      month: '2026-09',
-      total: 23,
-    },
-  ]
-
+  const { getList, list } = statsStore()
   useEffect(() => {
     getList()
   }, [])
