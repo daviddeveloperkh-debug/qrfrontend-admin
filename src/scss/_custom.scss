@@ -1712,6 +1712,9 @@ input[type='number'] {
     ~ * {
     --cui-sidebar-occupy-start: 20rem;
   }
+  .sidebar.hide:not(.sidebar-end) ~ * {
+    --cui-sidebar-occupy-start: 0rem !important;
+  }
 }
 
 @media (max-width: 992px) {
