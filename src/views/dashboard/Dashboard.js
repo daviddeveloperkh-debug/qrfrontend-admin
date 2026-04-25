@@ -31,6 +31,7 @@ import avatar6 from 'src/assets/images/avatars/6.jpg'
 
 // import WidgetsDropdown from '../widgets/WidgetsDropdown'
 import Charts from '../charts/Charts'
+import RatingByRegions from './RatingByRegions'
 
 const Dashboard = () => {
   const progressExample = [
@@ -157,7 +158,6 @@ const Dashboard = () => {
   return (
     <>
       {/* <WidgetsDropdown className="mb-4" /> */}
-      {/* <RatingByRegions /> */}
       {/* <ClientsMaxCountTable />
       <ProductsMaxCountTable /> */}
       {/* <WidgetsBrand className="mb-4" withCharts />
@@ -308,6 +308,7 @@ const Dashboard = () => {
         </CCol>
       </CRow> */}
       <Charts />
+      <RatingByRegions />
     </>
   )
 }

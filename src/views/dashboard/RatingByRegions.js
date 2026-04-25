@@ -1,30 +1,35 @@
 import { CCardTitle, CSmartTable } from '@coreui/react-pro'
 import React, { useEffect } from 'react'
-import { transactionStore } from '../../store/index'
+import { userStore } from '../../store/index'
 import { NoItemsLabel } from '../pagination/PaginationInfo'
 import { numberFormat } from '../../utils'
 
 const RatingByRegions = () => {
-  const { list, listLoading, getList } = transactionStore()
+  const { list, listLoading, getList } = userStore()
   const columns = [
     {
-      key: 'id',
-      label: 'ИД',
-      _style: { width: '60px' },
-    },
-    {
-      key: 'user_id',
-      label: 'Пользователь',
+      key: 'fullName',
+      label: "To'liq ismi",
       _style: { width: '130px' },
     },
     {
-      key: 'region_id',
-      label: 'Регион',
+      key: 'passportNumber',
+      label: 'Passport raqami',
       _style: { width: '60px' },
     },
     {
-      key: 'amount',
-      label: 'Сумма',
+      key: 'qualification',
+      label: 'Malakasi',
+      _style: { width: '60px' },
+    },
+    {
+      key: 'protocolNumber',
+      label: 'Bayonnoma raqami',
+      _style: { width: '60px' },
+    },
+    {
+      key: 'createdAt',
+      label: 'Yaratilgan vaqt',
       _style: { width: '60px' },
     },
   ]
@@ -33,7 +38,7 @@ const RatingByRegions = () => {
   }, [])
   return (
     <div>
-      <CCardTitle className='mb-2'>Последные транзакции</CCardTitle>
+      <CCardTitle className="mb-2">Oxirgi qo'shilgan studentlar</CCardTitle>
       <CSmartTable
         columns={columns}
         items={list?.data || []}
@@ -45,21 +50,11 @@ const RatingByRegions = () => {
           responsive: true,
         }}
         scopedColumns={{
-          status: (item) => (
+          fullName: (item) => (
             <td>
-              <CBadge color={findStatusColorFromNumber(item?.status?.int)}>
-                {item.status?.string}
-              </CBadge>
+              {item?.firstName} {item?.lastName} {item?.patronymic}
             </td>
           ),
-          logo: (item) => (
-            <td>
-              <img src={item?.logo} width={70} height={70} alt="" />
-            </td>
-          ),
-          user_id: (item) => <td>{item?.user_id?.data?.login}</td>,
-          amount: (item) => <td>{numberFormat(item?.amount)}</td>,
-          region_id: (item) => <td>{item?.region_id?.data?.name}</td>,
           created_at: (item) => <td>{item?.created_at?.date}</td>,
         }}
         pagination={false}
